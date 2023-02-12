@@ -10,5 +10,10 @@ namespace DiscordSnowflakeDecoder
             var e = discordEpoch.AddMilliseconds(discordSnowflake >> 22).ToLocalTime();
             return e;
         }
+
+        public static long GetUnixTimeFromSnowflake(long discordSnowFlake)
+        {
+            return ((discordSnowFlake >> 22) + 1420070400000) / 1000;
+        }
     }
 }
