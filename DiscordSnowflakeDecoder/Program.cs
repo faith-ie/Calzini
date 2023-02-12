@@ -5,13 +5,15 @@ namespace DiscordSnowflakeDecoder
 {
     internal class Program
     {
-        private static async Task Main() => await MainAsync();
+        private static Task Main() => SnowFlake();
 
-        private static async Task MainAsync()
+        private static async Task SnowFlake()
         {
             Console.WriteLine("What is your Discord Snowflake you would like decoded?");
-            ulong.TryParse(Console.ReadLine(), out var snowflake);
-            Console.WriteLine(await DiscordDecoder.DecodeSnowflake(snowflake));
+            long.TryParse(Console.ReadLine(), out var snowflake);
+            var amongus = DiscordDecoder.DecodeSnowflake(snowflake);
+            Console.WriteLine(amongus);
+            await Task.CompletedTask;
         }
     }
 }

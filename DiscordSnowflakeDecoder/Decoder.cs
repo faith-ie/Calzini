@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Threading.Tasks;
 
 namespace DiscordSnowflakeDecoder
 {
     public class DiscordDecoder
     {
-        public static async Task<DateTime> DecodeSnowflake(ulong discordSnowflake)
+        public static DateTime DecodeSnowflake(long discordSnowflake)
         {
-            ulong discordEpochMS = 1420070400000;
-            return (DateTime)((discordSnowflake >> 22) + discordEpochMS);
+            DateTime discordEpoch = new DateTime(2015, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            var e = discordEpoch.AddMilliseconds(discordSnowflake >> 22).ToLocalTime();
+            return e;
         }
     }
 }
