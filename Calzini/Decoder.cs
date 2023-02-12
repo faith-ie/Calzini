@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DiscordSnowflakeDecoder
+namespace Calzini
 {
     public class DiscordDecoder
     {

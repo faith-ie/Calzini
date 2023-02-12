@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace DiscordSnowflakeDecoder
+namespace Calzini
 {
     internal class Program
     {
