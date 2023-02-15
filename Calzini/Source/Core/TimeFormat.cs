@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace Calzini
+namespace Calzini.Core
 {
     public class TimeFormat
     {
