@@ -1,6 +1,7 @@
-﻿using System.Globalization;
+﻿using Calzini.Core.DiscordSnowflakeConversion;
+using System.Globalization;
 
-namespace Calzini.Core
+namespace Calzini.Core.DiscordTimeStamp
 {
     public class TimeFormat
     {
