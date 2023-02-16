@@ -23,6 +23,7 @@ namespace Calzini
             Console.WriteLine(TimeFormat.LongDate(snowflake));
             Console.WriteLine(TimeFormat.ShortDateTime(snowflake));
             Console.WriteLine(TimeFormat.LongDateTime(snowflake));
+            Console.WriteLine(TimeFormat.RelativeTime(snowflake));
             await Task.CompletedTask;
         }
     }

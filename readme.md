@@ -14,4 +14,4 @@ Date to Unix timestamp feature
 
 other things that I can think of
 
-Discord Timestamp formats (almost done, just need to do relative time)
+Discord Timestamp formats (almost done, I just need to update it a bit)
