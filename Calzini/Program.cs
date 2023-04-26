@@ -1,6 +1,7 @@
 ﻿using Calzini.Core.DiscordSnowflakeConversion;
 using Calzini.Core.DiscordTimeStamp;
 using Calzini.Core.TwitterSnowflakeConversion;
+using Calzini.Core.TwitterTimeStamp;
 using System;
 using System.Threading.Tasks;
 
@@ -40,7 +41,14 @@ namespace Calzini
                     postUnixTime = TwitterDecoder.GetUnixTimeFromTwitterSnowflake(snowflake);
                     Console.WriteLine("Twitter snowflake generated on: {0}", amongus);
                     Console.WriteLine("Unix timestamp: {0}", postUnixTime);
-                    Console.WriteLine("\t\t --- The Twitter stuff isn't done yet, I will do the twitter unix timestamp stuff later ---");
+                    Console.WriteLine(TwitterTimeFormat.ShortTime(snowflake));
+                    Console.WriteLine(TwitterTimeFormat.LongTime(snowflake));
+                    Console.WriteLine(TwitterTimeFormat.ShortDate(snowflake));
+                    Console.WriteLine(TwitterTimeFormat.LongDate(snowflake));
+                    Console.WriteLine(TwitterTimeFormat.ShortDateTime(snowflake));
+                    Console.WriteLine(TwitterTimeFormat.LongDateTime(snowflake));
+                    Console.WriteLine(TwitterTimeFormat.RelativeTime(snowflake));
+
                     break;
 
                 default:
