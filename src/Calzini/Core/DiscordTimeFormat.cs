@@ -1,6 +1,7 @@
 ﻿using Calzini.Core.DiscordSnowflakeConversion;
-using System.Globalization;
 using System;
+using System.Globalization;
+
 namespace Calzini.Core.DiscordTimeStamp
 {
     public class DiscordTimeFormat
@@ -51,18 +52,33 @@ namespace Calzini.Core.DiscordTimeStamp
         {
             var rt = DiscordDecoder.DecodeDiscordSnowflake(snowflake);
             DateTime date1 = new(rt.Year, rt.Month, rt.Day, rt.Hour, rt.Minute, rt.Second);
-            DateTime date2 = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
-            TimeSpan ts;
-            if (date1 > date2)
+            DateTime date2 = DateTime.Now;
+
+            TimeSpan ts = date2 - date1;
+
+            string urt = $"<t:{DiscordDecoder.GetUnixTimeFromDiscordSnowflake(snowflake)}:R>";
+
+            if (ts.TotalSeconds < 60)
             {
-                ts = date1 - date2;
+                return $"\nRelative Time format: {urt}\nExample of how it would look: {ts.TotalSeconds} seconds ago";
+            }
+            else if (ts.TotalMinutes < 60)
+            {
+                return $"\nRelative Time format: {urt}\nExample of how it would look: {ts.TotalMinutes} minutes ago";
+            }
+            else if (ts.TotalHours < 24)
+            {
+                return $"\nRelative Time format: {urt}\nExample of how it would look: {ts.TotalHours} hours ago";
+            }
+            else if (ts.TotalDays < 365)
+            {
+                return $"\nRelative Time format: {urt}\nExample of how it would look: {ts.TotalDays} days ago";
             }
             else
             {
-                ts = date2 - date1;
+                int years = date2.Year - rt.Year;
+                return $"\nRelative Time format: {urt}\nExample of how it would look: {years} years ago";
             }
-            string urt = $"<t:{DiscordDecoder.GetUnixTimeFromDiscordSnowflake(snowflake)}:R>";
-            return $"\nRelative Time format: " + urt + "\nExample of how it would look: " + ts;
         }
     }
 }

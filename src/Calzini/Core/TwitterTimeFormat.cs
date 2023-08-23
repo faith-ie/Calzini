@@ -1,6 +1,7 @@
 ﻿using Calzini.Core.TwitterSnowflakeConversion;
-using System.Globalization;
 using System;
+using System.Globalization;
+
 namespace Calzini.Core.TwitterTimeStamp
 {
     public class TwitterTimeFormat
