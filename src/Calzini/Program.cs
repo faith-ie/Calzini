@@ -4,7 +4,6 @@ using Calzini.Core.TwitterSnowflakeConversion;
 using Calzini.Core.TwitterTimeStamp;
 using System;
 using System.Threading.Tasks;
-
 namespace Calzini
 {
     internal class Program
@@ -13,7 +12,7 @@ namespace Calzini
 
         private static async Task SnowFlake()
         {
-            Console.Write("Would you like to decode a Twitter snowflake, or a Discord snowflake?\n1. Discord\n2. Twitter");
+            Console.Write("Would you like to decode a Twitter snowflake, or a Discord snowflake?\n1. Discord\n2. Twitter\n");
             int userInput;
             int.TryParse(Console.ReadLine(), out userInput);
             switch (userInput)

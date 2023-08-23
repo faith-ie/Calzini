@@ -1,5 +1,4 @@
 ﻿using System;
-
 namespace Calzini.Core.TwitterSnowflakeConversion
 {
     public class TwitterDecoder

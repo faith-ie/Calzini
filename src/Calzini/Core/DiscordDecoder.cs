@@ -1,5 +1,4 @@
 ﻿using System;
-
 namespace Calzini.Core.DiscordSnowflakeConversion
 {
     public class DiscordDecoder

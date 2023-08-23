@@ -2,8 +2,6 @@
 
 .git/
 
-*.sln
-
 bin/
 
 obj/
